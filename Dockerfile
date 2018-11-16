@@ -10,6 +10,7 @@ RUN venv/bin/pip install -r requirements.txt
 RUN venv/bin/pip install gunicorn
 
 COPY app.py app.py
+COPY boot.sh boot.sh
 COPY data/ data/
 COPY templates/ templates/
 
