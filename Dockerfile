@@ -8,4 +8,4 @@ RUN pip install gunicorn
 WORKDIR /deploy/app
 
 EXPOSE 5000
-CMD ["gunicorn", "--config", "/deploy/gunicorn_config.py", "kindle-ads:app"]
+CMD ["gunicorn", "--config", "/deploy/gunicorn_config.py", "--access-logfile", "-", "--error-logfile", "-", "kindle-ads:app"]
