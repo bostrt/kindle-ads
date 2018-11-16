@@ -1,21 +1,11 @@
 FROM python:3.7-alpine
 
-RUN adduser -D adpublisher
-
-WORKDIR /home/adpublisher
-
-COPY requirements.txt requirements.txt
-RUN python -m venv venv
-RUN venv/bin/pip install -r requirements.txt
-RUN venv/bin/pip install gunicorn
-
-COPY app.py app.py
-COPY boot.sh boot.sh
-COPY data/ data/
-COPY templates/ templates/
-
-RUN chown -R adpublisher:adpublisher ./
-USER adpublisher
+RUN mkdir -p /deploy/app
+COPY app /deploy/app
+COPY gunicorn_config.py /deploy/gunicorn_config.py
+RUN pip install -r /deploy/app/requirements.txt
+RUN pip install gunicorn
+WORKDIR /deploy/app
 
 EXPOSE 5000
-ENTRYPOINT ["./boot.sh"]
+CMD ["gunicorn", "--config", "/deploy/gunicorn_config.py", "kindle-ads:app"]

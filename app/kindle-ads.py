@@ -88,3 +88,6 @@ def hello(a, b, adid, something, adid2, timestamp, creativeid):
     resp.headers['x-amz-request-id'] = '23B54F17F3191750'
     resp.headers['Server'] = 'AmazonS3'
     return resp
+
+if __name__=='__main__':
+     app.run(host='0.0.0.0', port=8000)
