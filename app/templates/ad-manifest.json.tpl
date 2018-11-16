@@ -21,7 +21,7 @@
                 },
                 {
                     "filename": "thumb.gif",
-                    "checksum": "{{ thumgifmd5 }}",
+                    "checksum": "{{ thumbgifmd5 }}",
                     "creative-id": "{{ creativeid }}"
                 },
                 {
