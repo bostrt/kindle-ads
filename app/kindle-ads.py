@@ -58,7 +58,7 @@ def compress_addir(adid, timestamp, creativeid):
     bannergifmd5 = md5(bannergiff)
 
     screensvrgiff = os.path.join(datadir, 'screensvr.gif')
-    ziph.write(screensvrgiff, arcname=os.path.join(adid, 'screensvc.gif'))
+    ziph.write(screensvrgiff, arcname=os.path.join(adid, 'screensvr.gif'))
     screensvrgifmd5 = md5(screensvrgiff)
 
     detailsxmlf = os.path.join(datadir, 'details.xml')
