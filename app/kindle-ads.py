@@ -77,6 +77,7 @@ def compress_addir(adid, timestamp, creativeid):
     ziph.close()
     return ziph.filename
 
+@app.route('/<int:a>/<string:adid>/<string:b>/1.0/ad-<string:adid2>.<int:timestamp>.<int:creativeid>.apg', methods=['GET'], defaults={'something': None})
 @app.route('/US/<int:a>/<int:b>/<string:adid>/<string:something>/ad-<int:adid2>.<int:timestamp>.<int:creativeid>.apg', methods=['GET'])
 def hello(a, b, adid, something, adid2, timestamp, creativeid):
     addirzip = compress_addir(adid, timestamp, creativeid)
