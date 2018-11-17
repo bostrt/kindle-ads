@@ -4,19 +4,8 @@ import zipfile
 import tempfile
 import hashlib
 
-ADVERT_FILES = {
-    'ad-manifest.json',
-    'banner.gif',
-    'details.html',
-    'screensvr.png',
-    'snippet.json',
-    'thumb.gif'
-}
 datadir = os.getenv('DATA_DIR', './data')
 app = Flask(__name__)
-
-def _build_ad():
-    pass
 
 # thanks https://stackoverflow.com/questions/3431825/generating-an-md5-checksum-of-a-file
 def md5(fname):
@@ -41,6 +30,7 @@ def extract_adid(input):
         return result
 
 def compress_addir(adid, timestamp, creativeid):
+    # Build the .apg (zip) file
     tempdir = tempfile.gettempdir()
     context = dict()
     ziph = zipfile.ZipFile(os.path.join(tempdir, 'advert' + adid + '.apg'), 'w', zipfile.ZIP_DEFLATED)

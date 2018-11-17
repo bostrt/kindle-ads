@@ -95,6 +95,11 @@ Note that an alternative method to the zone data snippet above would be to use `
 # Notes. To be better documented.
 
 ```
+Example request paths:
+dadet-kapo-prod-flights.s3.amazonaws.com/7363/3775014010701_XX-a428f78b6ebb3c86ec81034ae397a613410a64018186d50207e23bfbea099fc8/98da0345e4d6868d260dff213a08b14a5057767e3a61088bf435514672bbf240/1.0/ad-3775014010701_XX-a428f78b6ebb3c86ec81034ae397a613410a64018186d50207e23bfbea099fc8.20181114050900.8770353950201.apg?software_rev=2692310002&patchVersion=2&currentTransportMethod=WIFI&currentMCC=&currentSponsoredHotspot=
+adpublisher.s3.amazonaws.com/US/94/84/9484321190501/SHASTA/ad-9484321190501.20180409170745.1515612200601.apg?software_rev=2692310002&patchVersion=2&currentTransportMethod=WIFI&currentMCC=&currentSponsoredHotspot=
+
+
 # Add CA cert to /etc/ssl/certs/ca-certificates on Kindle
 
 # TODO
